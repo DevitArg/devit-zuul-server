@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: zuul
+  cloud:
+     config:
+       failFast: true
+       retry:
+         max-attempts: 10000
+         max-interval: 1000
+       enabled: true
+       discovery:
+         enabled: true
+         serviceId: configuration-server
+
+eureka:
+  client:
+    enabled: true
+    registerWithEureka: true
+    preferSameZone: true
+    serviceUrl:
+      defaultZone: http://eureka:8761/eureka/
